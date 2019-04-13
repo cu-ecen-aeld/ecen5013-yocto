@@ -1,0 +1,1 @@
+inherit core-image
