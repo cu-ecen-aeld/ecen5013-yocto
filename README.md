@@ -26,6 +26,14 @@ echo "Starting bitbake... This will take a while!"
 bitbake core-image-ecen5013
 ```
 
+# Subsequent Runs
+* cd into the poky directory
+* Run
+```
+source oe-init-build-env
+bitbake core-image-ecen5013
+```
+
 # Running In The Emulator
 After sourcing the build environment setup script (source oe-init-build-env from the poky folder) use:
 ```
