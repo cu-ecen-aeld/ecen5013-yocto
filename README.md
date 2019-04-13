@@ -21,7 +21,7 @@ pushd poky
 echo "Initializing build environment"
 source oe-init-build-env
 echo "Adding meta-ecen5013 layer"
-bitbake-layers add-layer ../meta-ecen5013
+bitbake-layers add-layer ../../meta-ecen5013
 echo "Starting bitbake... This will take a while!"
 bitbake core-image-ecen5013
 ```
