@@ -2,9 +2,9 @@
 
 This project demonstrates a yocto build starter environment for University of Colorado course [ECEN 5013 Advanced Embedded System Development](https://sites.google.com/colorado.edu/ecen5013/home).
 
-# First Run
+# Setting Up the First Build
 
-Follow the instructions below to build the example image for ecen5013.  See [yocto quick build instructions](https://www.yoctoproject.org/docs/2.6/brief-yoctoprojectqs/brief-yoctoprojectqs.html) for background.  These instructions were tested on a Ubuntu 18.04 virtual machine
+Follow the instructions below to build the example image for ecen5013.  See [yocto quick build instructions](https://www.yoctoproject.org/docs/2.6/brief-yoctoprojectqs/brief-yoctoprojectqs.html) for background and original detail.  These instructions were tested on a Ubuntu 18.04 virtual machine.
 
 Start by cloning this repo, cd into the directory created after cloning, then run the commands below (or copy and paste them into the terminal window)
 ```
@@ -22,11 +22,19 @@ echo "Initializing build environment"
 source oe-init-build-env
 echo "Adding meta-ecen5013 layer"
 bitbake-layers add-layer ../../meta-ecen5013
-echo "Starting bitbake... This will take a while!"
-bitbake core-image-ecen5013
 ```
 
-# Subsequent Runs
+## Optional Step
+For faster builds, add these lines to poky/build/conf/local.conf
+```
+     SSTATE_MIRRORS = "\
+     file://.* http://sstate.yoctoproject.org/dev/PATH;downloadfilename=PATH \n \
+     file://.* http://sstate.yoctoproject.org/2.5/PATH;downloadfilename=PATH \n \
+     file://.* http://sstate.yoctoproject.org/2.6/PATH;downloadfilename=PATH \n \
+     "
+```
+
+# Builds
 * cd into the poky directory
 * Run
 ```
