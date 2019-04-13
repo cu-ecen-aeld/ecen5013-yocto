@@ -1,8 +1,8 @@
-== Overview ===
+# Overview 
 
 This project demonstrates a yocto build starter environment for University of Colorado course [ECEN 5013 Advanced Embedded System Development](https://sites.google.com/colorado.edu/ecen5013/home).
 
-== First Run ==
+# First Run
 
 Follow the instructions below to build the example image for ecen5013.  See [yocto quick build instructions](https://www.yoctoproject.org/docs/2.6/brief-yoctoprojectqs/brief-yoctoprojectqs.html) for background.  These instructions were tested on a Ubuntu 18.04 virtual machine
 
@@ -24,7 +24,7 @@ echo "Starting bitbake... This will take a while!"
 bitbake core-image-ecen5013
 ```
 
-== Running In The Emulator ===
+# Running In The Emulator
 After sourcing the build environment setup script (source oe-init-build-env from the poky folder) use:
 ```
 runqemu qemux86 nographic
