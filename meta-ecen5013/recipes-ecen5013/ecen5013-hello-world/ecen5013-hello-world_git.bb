@@ -13,12 +13,11 @@ LICENSE = "CLOSED"
 LIC_FILES_CHKSUM = ""
 
 SRC_URI = "git://github.com/cu-ecen-5013/ecen5013-hello-world.git;protocol=https \
-           file://0001-Update-makefile.patch \
            "
 
 # Modify these as desired
 PV = "1.0+git${SRCPV}"
-SRCREV = "69aaa93a72dab2b905eb77b0cbed9efc71791577"
+SRCREV = "452e6e18d1323df20a309e1e55300063d893777e"
 
 S = "${WORKDIR}/git"
 
@@ -41,4 +40,3 @@ do_install () {
 	install -d ${D}${bindir}
 	install -m 0755 ${S}/hello-ecen5013 ${D}${bindir}/	
 }
-
