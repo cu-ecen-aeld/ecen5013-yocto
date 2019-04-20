@@ -4,25 +4,7 @@ This project demonstrates a yocto build starter environment for University of Co
 
 # Setting Up the First Build
 
-Follow the instructions below to build the example image for ecen5013.  See [yocto quick build instructions](https://www.yoctoproject.org/docs/2.6/brief-yoctoprojectqs/brief-yoctoprojectqs.html) for background and original detail.  These instructions were tested on a Ubuntu 18.04 virtual machine.
-
-Start by cloning this repo, cd into the directory created after cloning, then run the commands below (or copy and paste them into the terminal window)
-```
-echo "Install essential host packages"
-sudo apt-get install gawk wget git-core diffstat unzip texinfo gcc-multilib \
-     build-essential chrpath socat cpio python python3 python3-pip python3-pexpect \
-     xz-utils debianutils iputils-ping libsdl1.2-dev xterm
-echo "Clone poky repository as a submodule"
-git submodule init
-git submodule sync
-git submodule update
-echo "cd into the poky directory"
-pushd poky
-echo "Initializing build environment"
-source oe-init-build-env
-echo "Adding meta-ecen5013 layer"
-bitbake-layers add-layer ../../meta-ecen5013
-```
+After cloning the repository, run the `./install_ubuntu.sh` script to setup an Ubuntu 18.04 installation for build.
 
 ## Optional Step
 For faster builds, add these lines to poky/build/conf/local.conf
@@ -35,15 +17,15 @@ For faster builds, add these lines to poky/build/conf/local.conf
 ```
 
 # Builds
-* cd into the poky directory
-* Run
+Run 
 ```
-source oe-init-build-env
-bitbake core-image-ecen5013
+./build.sh
 ```
 
 # Running In The Emulator
-After sourcing the build environment setup script (source oe-init-build-env from the poky folder) use:
+Run
 ```
-runqemu qemux86 nographic
+./start_qemu.sh
 ```
+
+Use root with no password as login
