@@ -1,0 +1,19 @@
+name: assignment-test
+on: [push]
+jobs:
+      full-test:  
+        runs-on: self-hosted
+        steps:
+          - uses: actions/checkout@v3
+            with:
+              clean: false
+              submodules: 'recursive'
+          - name: Run build
+            timeout-minutes: 600
+            run: |
+               docker run --rm \
+                 -v $SSH_AUTH_SOCK:/ssh-agent -v ~/.ssh/known_hosts:/root/.ssh/known_hosts -e SSH_AUTH_SOCK=/ssh-agent \
+                 -v ${GITHUB_WORKSPACE}:${GITHUB_WORKSPACE} \
+                 cuaesd/aesd-autotest:assignment6-yocto \
+                 --workdir=${GITHUB_WORKSPACE} \
+                 ./build.sh
