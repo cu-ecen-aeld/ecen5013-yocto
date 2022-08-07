@@ -6,16 +6,6 @@ This project demonstrates a yocto build starter environment for University of Co
 
 After cloning the repository, run the `./install_ubuntu.sh` script to setup an Ubuntu 18.04 installation for build.
 
-## Optional Step
-For faster builds, add these lines to poky/build/conf/local.conf
-```
-     SSTATE_MIRRORS = "\
-     file://.* http://sstate.yoctoproject.org/dev/PATH;downloadfilename=PATH \n \
-     file://.* http://sstate.yoctoproject.org/2.5/PATH;downloadfilename=PATH \n \
-     file://.* http://sstate.yoctoproject.org/2.6/PATH;downloadfilename=PATH \n \
-     "
-```
-
 # Builds
 Run 
 ```
