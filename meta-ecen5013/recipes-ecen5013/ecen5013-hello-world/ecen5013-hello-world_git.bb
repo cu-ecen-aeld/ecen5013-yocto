@@ -21,7 +21,7 @@ SRCREV = "452e6e18d1323df20a309e1e55300063d893777e"
 
 S = "${WORKDIR}/git"
 
-FILES_${PN} += "${bindir}/hello-ecen5013"
+FILES:${PN} += "${bindir}/hello-ecen5013"
 
 # NOTE: this is a Makefile-only piece of software, so we cannot generate much of the
 # recipe automatically - you will need to examine the Makefile yourself and ensure
