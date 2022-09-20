@@ -1,2 +1,2 @@
-IMAGE_INSTALL += "bash"
+IMAGE_INSTALL:append = " bash"
 inherit core-image
