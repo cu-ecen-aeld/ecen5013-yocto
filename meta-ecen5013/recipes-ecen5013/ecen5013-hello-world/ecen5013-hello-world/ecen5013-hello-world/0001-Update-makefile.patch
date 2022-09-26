@@ -1,0 +1,36 @@
+From a771f840b18c871d06a08b066195554a849d311c Mon Sep 17 00:00:00 2001
+From: Dan Walkes <danwalkes@trellis-logic.com>
+Date: Sat, 13 Apr 2019 18:27:27 -0600
+Subject: [PATCH] Update makefile
+
+For support with LDFLAGS and CCFLAGS arguments needed by yocto build.
+---
+ .gitignore | 1 +
+ Makefile   | 9 ++++++---
+ 2 files changed, 7 insertions(+), 3 deletions(-)
+
+diff --git a/.gitignore b/.gitignore
+index 4dc4f06..dbf97bd 100644
+--- a/.gitignore
++++ b/.gitignore
+@@ -1 +1,2 @@
+ hello-ecen5013
++*.o
+diff --git a/Makefile b/Makefile
+index 041088d..d41a261 100644
+--- a/Makefile
++++ b/Makefile
+@@ -1,7 +1,10 @@
+ all: hello-ecen5013
+ 
+-main.o hello-ecen5013: main.c
+-	$(CC) main.c -o hello-ecen5013
++main.o: main.c
++	$(CC) $(CCFLAGS) -c main.c
++
++hello-ecen5013: main.o
++	$(CC) $(LDFLAGS) main.o -o hello-ecen5013
+ 
+ clean :
+-	rm main.o hello-ecen5013
++	rm -f main.o hello-ecen5013
